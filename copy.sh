@@ -6,7 +6,7 @@ set -euo pipefail
 
 # dentsuToolディレクトリがあるところまでのパス(dentsuTool/は含まなくていい)
 source_dir=""
-# lampディレクトリがあるところまでのパス(lamp/は含まなくていい)
+# lamp-dockerディレクトリがあるところまでのパス(lamp/は含まなくていい)
 destination_dir=""
 
 # dentsuTools/からuser_icon/までのパス
