@@ -1,0 +1,3 @@
+db/db-data/*
+web/html/*
+web/phpsession/*

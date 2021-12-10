@@ -1,0 +1,41 @@
+version: "3"
+
+# サービス定義
+services:
+  web:
+    # ./web/Dockerfile をビルド
+    build: ./web/
+    # コンテナ名を指定
+    container_name: webServer
+    # localhostの80番ポートとwebサーバの80番の対応付け
+    ports:
+      - "80:80"
+    # dbサービスのコンテナとの接続ができるようにする
+    links:
+      - db
+    volumes:
+      # コンテナ側の/var/www/htmlにマウント(読み書き可)
+      - ./web/html/index:/var/www/html/:rw
+      # php設定ファイルをマウント(read-only)
+      - ./web/php.ini:/usr/local/etc/php/php.ini:ro
+      # セッションフォルダのマウント
+      - ./web/phpsession:/phpsession:rw
+  db:
+    image: mysql:5.7.34
+    container_name: dbServer
+    # 環境変数の定義
+    environment:
+      # rootのパスワードを設定
+      MYSQL_ROOT_PASSWORD: root
+      # イメージの起動時に作成するデータベースの名前を設定
+      MYSQL_DATABASE: dentsudb
+      # MYSQL_DATABASE変数で指定されたデータベースのユーザとパスワードを設定
+      MYSQL_USER: dentsu_user
+      MYSQL_PASSWORD: DentsuTool
+    volumes:
+      # コンテナ側の/var/lib/mysqlにマウント(読み書き可)
+      - ./db/db-data:/var/lib/mysql/:rw
+      # MySQL設定ファイルをマウント(read-only)
+      - ./db/my.cnf:/etc/mysql/conf.d/my.cnf:ro
+      # 初期データ(アルファベット順に実行)
+      - ./db/initdb.d:/docker-entrypoint-initdb.d
