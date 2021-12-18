@@ -5,9 +5,9 @@ set -euo pipefail
 # source_dirとdestination_dirに値を設定してください
 
 # dentsuToolディレクトリがあるところまでのパス(dentsuTool/は含まなくていい)
-source_dir=""
+source_dir="~/dentsu/"
 # lamp-dockerディレクトリがあるところまでのパス(lamp/は含まなくていい)
-destination_dir=""
+destination_dir="~/dentsu/"
 
 # dentsuTools/からuser_icon/までのパス
 usericon_dir="index/content/user_icon/"
