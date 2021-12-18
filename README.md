@@ -36,7 +36,9 @@ dentsuToolsのdocker上の検証環境です。
 前提：dockerの環境を導入していること
 1. copy.shの編集
    - copy.shの`source_dir`と`destination_dir`をコメントに書かれてあることに従って追記する
+     - `"~/dentsu/"`は例なので""の中身を書き換えてください
 2. コンテナの作成
+   - copy.shを起動し成功したことを確認
    - docker-compose.ymlがある場所で`docker-compose up --build -d`を入力
    - ２回目以降は、`docker-compose up -d`で良い
    - `localhost:80`でアクセス
