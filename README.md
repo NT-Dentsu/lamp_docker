@@ -4,6 +4,8 @@ dentsuToolsのdocker上の検証環境です。
 ## ディレクトリ構成の説明
 - copy.sh
   - 変更した別ディレクトリのdentsuToolsディレクトリをlamp_dockerディレクトリ下に配置し、また権限の変更を行うためのシェルスクリプト
+- delete.sh
+  - データベース情報，セッションファイル，webコンテンツファイルを一括削除するためのシェルスクリプト
 - docker-compose.yml
   - dbコンテナとwebコンテナの設定を行うファイル
 - db/
@@ -38,13 +40,15 @@ dentsuToolsのdocker上の検証環境です。
    - copy.shの`source_dir`と`destination_dir`をコメントに書かれてあることに従って追記する
      - `"~/dentsu/"`は例なので""の中身を書き換えてください
 2. コンテナの作成
-   - copy.shを起動し成功したことを確認
+   - copy.shを実行し成功したことを確認
    - docker-compose.ymlがある場所で`docker-compose up --build -d`を入力
    - ２回目以降は、`docker-compose up -d`で良い
    - `localhost:80`でアクセス
      - もしポートを変更したい場合は`docker-compose.yml`のポート部分を書き換えることで変更可
 3. コンテナの停止&削除
    - `docker-compose down`を入力
+- データベース情報，セッションファイル，webコンテンツファイルを一括削除するには`delete.sh`を実行する
+
 
 docker関連のコマンドは、Webサイトや
 https://scrapbox.io/NagasakiTech-InfHub/docker%E3%82%88%E3%81%8F%E4%BD%BF%E3%81%86%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89
