@@ -49,7 +49,10 @@ dentsuToolsのdocker上の検証環境です。
    - `docker-compose down`を入力
 - データベース情報，セッションファイル，webコンテンツファイルを一括削除するには`delete.sh`を実行する
 
-
 docker関連のコマンドは、Webサイトや
 https://scrapbox.io/NagasakiTech-InfHub/docker%E3%82%88%E3%81%8F%E4%BD%BF%E3%81%86%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89
 などを参考にしてください。
+
+## Play with Dockerでサーバを建てる方法
+[PlayWithDocker.md](./PlayWithDocker.md)を参照してください。
+

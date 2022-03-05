@@ -10,7 +10,18 @@ Play with Docker を開始してから4時間経つと自動でインスタン�
 
 Play with Dockerを使用するには、Docker IDが必要です。[Docker Hub](https://hub.docker.com/)でSign upしてください。
 
-## Play with Docker で Dentsu Tool を動作させる手順
+## Play with Docker で Dentsu Tool を動作させる手順(1)
+1. Play with Docker にアクセスしてインスタンスを生成
+   * 端末に`pwd`コマンドを実行しカレントディレクトリが`/root`であることを確認
+2. [DentsuTool](https://github.com/NT-Dentsu/dentsuTools) と [lamp_docker](https://github.com/NT-Dentsu/lamp_docker) をインタンス上にcloneする
+   * `git clone https://github.com/NT-Dentsu/lamp_docker.git`
+3. lamp_docker中の`pwd.sh`を実行する
+   * `bash lamp_docker/pwd.sh`
+   * 実行が完了するのを待つ
+4. 80番ポートを開いたのでOPEN PORTボタンをクリックし`80`と入力
+   * そうすると勝手にWebページが開きます
+## Play with Docker で Dentsu Tool を動作させる手順(2)
+`pwd.sh`を使わない方法です。
 1. Play with Docker にアクセスしてインスタンスを生成
    * 端末に`pwd`コマンドを実行しカレントディレクトリが`/root`であることを確認
 2. [DentsuTool](https://github.com/NT-Dentsu/dentsuTools) と [lamp_docker](https://github.com/NT-Dentsu/lamp_docker) をインタンス上にcloneする
