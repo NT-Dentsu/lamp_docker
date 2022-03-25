@@ -7,9 +7,9 @@ services:
     build: ./web/
     # コンテナ名を指定
     container_name: webServer
-    # localhostの80番ポートとwebサーバの80番の対応付け
+    # localhostの443番ポートとwebサーバの443番の対応付け
     ports:
-      - "80:80"
+      - "443:443"
     # dbサービスのコンテナとの接続ができるようにする
     links:
       - db

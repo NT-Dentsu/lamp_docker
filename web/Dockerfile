@@ -6,5 +6,14 @@ RUN apt-get update && apt-get install -y libonig-dev \
  && docker-php-ext-install pdo pdo_mysql \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
-# 80番ポートの開放
-EXPOSE 80
+
+COPY conf/default-ssl.conf /etc/apache2/sites-available/default-ssl.conf
+COPY conf/entrypoint.sh /tmp/
+# RUN mkdir -p /etc/pki/ssl
+RUN chmod a+x /tmp/entrypoint.sh
+RUN /bin/bash -c "source /tmp/entrypoint.sh"
+RUN a2enmod ssl
+RUN a2ensite default-ssl
+# 443番ポートの開放
+EXPOSE 443
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
