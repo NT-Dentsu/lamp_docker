@@ -11,11 +11,10 @@ RUN apt-get update && apt-get install -y libonig-dev \
 RUN echo "ServerTokens ProductOnly" >> /etc/apache2/apache2.conf
 
 COPY conf/default-ssl.conf /etc/apache2/sites-available/default-ssl.conf
+COPY conf/ports.conf /etc/apache2/ports.conf
 COPY conf/entrypoint.sh /tmp/
 RUN chmod a+x /tmp/entrypoint.sh
 RUN /bin/bash -c "source /tmp/entrypoint.sh"
 RUN a2enmod ssl
 RUN a2ensite default-ssl
-# 443番ポートの開放
-EXPOSE 443
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
