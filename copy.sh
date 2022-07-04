@@ -32,6 +32,6 @@ eval "chmod o+rwx ./web/html/${usericon_dir}"
 # dbaccess.php中にあるデータベースのホスト名をlocalhostからdbに変更
 before_host="const HOST_NAME = 'localhost'"
 after_host="const HOST_NAME = 'db'"
-eval "sed -i -e \"s/${before_host}/${after_host}/\" ./web/html/index/common/dbaccess.php"
+eval "sed -i -e \"s/${before_host}/${after_host}/\" ./web/html/index/common/php/dbaccess.php"
 set +x
 echo "successful"
