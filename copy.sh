@@ -24,6 +24,8 @@ set -x
 
 # セッションファイルの保存先ディレクトリをwww-dataが書き込めるように権限変更
 eval "chmod o+rwx ./web/phpsession/"
+# 古いindexディレクトリを削除
+eval "rm -r ./web/html/index/"
 # indexディレクトリ以下をlamp/web/html/にコピー
 eval "cp -r ${source_dir}dentsuTools/index/ ./web/html/"
 # アイコンの保存先ディレクトリにwww-dataがファイルを作成できるように権限変更
