@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 機能追加
+    about: made by config.yml
+    url: https://github.com/NT-Dentsu/lamp_docker/issues/new?template=feature.md&labels=enhancement
+  - name: リファクタリング
+    about: made by config.yml
+    url: https://github.com/NT-Dentsu/lamp_docker/issues/new?template=refactoring.md&labels=refactoring
+  - name: バグ報告
+    about: made by config.yml
+    url: https://github.com/NT-Dentsu/lamp_docker/issues/new?template=bug_report.md&labels=bug
