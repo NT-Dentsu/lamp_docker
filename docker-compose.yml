@@ -9,7 +9,7 @@ services:
     container_name: webServer
     # localhostの80番ポートとwebサーバの80番の対応付け
     ports:
-      - "80:80"
+      - "8000:80"
     # dbサービスのコンテナとの接続ができるようにする
     links:
       - db
